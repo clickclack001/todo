@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useTodoStore } from '@/store/todo-store';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import {SquarePlus} from "lucide-react";
+import { SquarePlus } from "lucide-react";
 
 export const TaskInput = () => {
   const [text, setText] = useState('');
-  const addTask = useTodoStore((state) => state.addTask);
+  const { addTask } = useTodoStore((state) => state);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,8 +28,9 @@ export const TaskInput = () => {
       <Button
         type="submit"
         variant="secondary"
+        aria-label="add-new-task"
       >
-        <SquarePlus/>
+        <SquarePlus />
       </Button>
     </form>
   );
