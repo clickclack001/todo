@@ -1,6 +1,6 @@
-import TaskInput from "@/components/task-input.tsx";
-import TaskFilter from "@/components/task-filter.tsx";
-import TaskList from "@/components/task-list.tsx";
+import TaskInput from "@/components/task-input";
+import TaskFilter from "@/components/task-filter";
+import TaskList from "@/components/task-list";
 
 
 function App() {
