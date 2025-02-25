@@ -1,15 +1,16 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
+import { configDefaults } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
   test: {
-    globals: true, // включает глобальные переменные, как в Jest
-    environment: 'jsdom', // используем jsdom для тестирования, так как это имитирует браузер
-    //setupFiles: './vitest.setup.ts', // файл для начальной настройки (опционально)
+    globals: true,
+    environment: 'jsdom',
+    exclude: [...configDefaults.exclude, 'e2e/*'],
     coverage: {
-      reporter: ['text', 'json', 'html'], // настройка отчета о покрытии (по желанию)
+      reporter: ['text', 'json', 'html'],
     },
   },
   resolve: {
