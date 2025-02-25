@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {SquarePlus} from "lucide-react";
 
-const TaskInput = () => {
+export const TaskInput = () => {
   const [text, setText] = useState('');
   const addTask = useTodoStore((state) => state.addTask);
 
@@ -34,5 +34,3 @@ const TaskInput = () => {
     </form>
   );
 };
-
-export default TaskInput;
